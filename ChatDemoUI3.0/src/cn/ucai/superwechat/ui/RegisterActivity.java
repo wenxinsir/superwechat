@@ -15,7 +15,7 @@ package cn.ucai.superwechat.ui;
 
 import com.hyphenate.EMError;
 import com.hyphenate.chat.EMClient;
-import cn.ucai.superwechat.DemoHelper;
+import cn.ucai.superwechat.SuperWeChatHelper;
 import cn.ucai.superwechat.R;
 import com.hyphenate.exceptions.HyphenateException;
 
@@ -68,19 +68,18 @@ public class RegisterActivity extends BaseActivity {
 		if (!TextUtils.isEmpty(username) && !TextUtils.isEmpty(pwd)) {
 			final ProgressDialog pd = new ProgressDialog(this);
 			pd.setMessage(getResources().getString(R.string.Is_the_registered));
-			pd.show();
 
 			new Thread(new Runnable() {
 				public void run() {
 					try {
-						// call method in SDK
+						// 调用一个SDK的方法去注册一个环信的账号，不是服务器的账号
 						EMClient.getInstance().createAccount(username, pwd);
 						runOnUiThread(new Runnable() {
 							public void run() {
 								if (!RegisterActivity.this.isFinishing())
 									pd.dismiss();
 								// save current user
-								DemoHelper.getInstance().setCurrentUserName(username);
+								SuperWeChatHelper.getInstance().setCurrentUserName(username);
 								Toast.makeText(getApplicationContext(), getResources().getString(R.string.Registered_successfully), Toast.LENGTH_SHORT).show();
 								finish();
 							}
