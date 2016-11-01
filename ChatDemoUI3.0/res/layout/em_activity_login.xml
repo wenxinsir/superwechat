@@ -4,12 +4,19 @@
     android:layout_height="match_parent"
     android:background="#eff2f6"
     android:orientation="vertical" >
-
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:src="@drawable/em_welcom_logo"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginLeft="30dp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:layout_marginTop="20dp">
 
         <RelativeLayout
             android:id="@+id/rl_username"
