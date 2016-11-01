@@ -433,7 +433,7 @@
             android:name="com.umeng.update.UpdateDialogActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
-        <!-- 设置环信应用的appkey -->
+        <!--  设置环信应用的appkey  -->
         <meta-data
             android:name="EASEMOB_APPKEY"
             android:value="i#superwechat201607" />
