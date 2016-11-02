@@ -223,6 +223,8 @@ public class LoginActivity extends BaseActivity {
                             pd.dismiss();
                             L.e(TAG,"login fail,"+result);
                         }
+                    }else {
+                        pd.dismiss();
                     }
             }
 
