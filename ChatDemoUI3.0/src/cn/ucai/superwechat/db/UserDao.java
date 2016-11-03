@@ -45,8 +45,9 @@ public class UserDao {
 	public static final String USER_COLUMN_AVATAR_PATH= "m_user_avatar_path";
 	public static final String USER_COLUMN_AVATAR_SUFFIX = "m_user_avatar_suffix";
 	public static final String USER_COLUMN_AVATAR_LASTUPDATE_TIME = "m_user_avatar_lastupdate_time";
-	
-	
+	private Map<String, User> appContactList;
+
+
 	public UserDao(Context context) {
 	}
 
@@ -116,5 +117,17 @@ public class UserDao {
 	}
 	public boolean updateUser(User user){
 		return SuperWeChatDBManager.getInstance().updateUser(user);
+	}
+
+	public void saveAppContact(User user){
+		SuperWeChatDBManager.getInstance().saveAppContact(user);
+	}
+
+	public Map<String, User> getAppContactList() {
+		return SuperWeChatDBManager.getInstance().getAppContactList();
+	}
+
+	public void saveAppContactList(List<User> contactList) {
+		SuperWeChatDBManager.getInstance().saveAppContactList(contactList);
 	}
 }
