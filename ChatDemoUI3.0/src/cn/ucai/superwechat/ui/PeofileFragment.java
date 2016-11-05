@@ -78,4 +78,10 @@ public class PeofileFragment extends Fragment {
             outState.putBoolean(Constant.ACCOUNT_REMOVED, true);
         }
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        setUserInfo();
+    }
 }
