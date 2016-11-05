@@ -12,6 +12,7 @@ import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.ui.LoginActivity;
 import cn.ucai.superwechat.ui.MainActivity;
 import cn.ucai.superwechat.ui.RegisterActivity;
+import cn.ucai.superwechat.ui.SettingsActivity;
 import cn.ucai.superwechat.ui.UserProfileActivity;
 
 
@@ -36,10 +37,14 @@ public class MFGT {
         context.startActivityForResult(intent,requestCode);
         context.overridePendingTransition(R.anim.push_left_in,R.anim.push_bottom_out);
     }
-//    登录
+//    修改SettingsFragment为SettingsActivity
     public static void gotoLogin(Activity context){
         startActivity(context,LoginActivity.class);
     }
+
+    public static void gotoSettings(Activity context){
+                startActivity(context, SettingsActivity.class);
+            }
 //    注册
     public static void gotoRegister(Activity context){
         startActivity(context,RegisterActivity.class);
