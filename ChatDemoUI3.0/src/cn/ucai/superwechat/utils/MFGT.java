@@ -4,13 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-import com.baidu.platform.comapi.map.I;
-import com.baidu.platform.comapi.map.L;
-
-import java.util.ArrayList;
 import cn.ucai.superwechat.R;
 import cn.ucai.superwechat.ui.LoginActivity;
-import cn.ucai.superwechat.ui.MainActivity;
 import cn.ucai.superwechat.ui.RegisterActivity;
 import cn.ucai.superwechat.ui.SettingsActivity;
 import cn.ucai.superwechat.ui.UserProfileActivity;
@@ -45,6 +40,10 @@ public class MFGT {
     public static void gotoSettings(Activity context){
                 startActivity(context, SettingsActivity.class);
             }
+
+    public static void gotoUserProfile(Activity context){
+        startActivity(context, UserProfileActivity.class);
+    }
 //    注册
     public static void gotoRegister(Activity context){
         startActivity(context,RegisterActivity.class);
