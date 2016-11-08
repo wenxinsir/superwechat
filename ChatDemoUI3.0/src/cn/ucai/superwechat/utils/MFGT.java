@@ -72,4 +72,7 @@ public class MFGT {
         intent.putExtra(I.User.USER_NAME,username);
         startActivity(context, intent);
     }
+    public static void gotoNewFriendsMsg(Activity context){
+        startActivity(context, AddContactActivity.class);
+    }
 }
