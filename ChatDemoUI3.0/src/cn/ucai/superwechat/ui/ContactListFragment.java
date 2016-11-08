@@ -183,6 +183,8 @@ public class ContactListFragment extends EaseContactListFragment {
             case R.id.application_item:
                 // 进入申请与通知页面
                 MFGT.gotoNewFriendsMsg(getActivity());
+                // 进入新的朋友
+                MFGT.gotoNewFriendsMsg(getActivity());
                 break;
             case R.id.group_item:
                 // 进入群聊列表页面
