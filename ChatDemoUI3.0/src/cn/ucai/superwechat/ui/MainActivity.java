@@ -223,7 +223,7 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
         mLayoutViewpage.setOffscreenPageLimit(4);
         adpter.addFragment(new ConversationListFragment(), getString(R.string.app_name));
         adpter.addFragment( contactListFragment, getString(R.string.contacts));
-        adpter.addFragment(new DiscoverFragment(), getString(R.string.diagnose));
+        adpter.addFragment(new DiscoverFragment(), getString(R.string.discover));
         adpter.addFragment(new PeofileFragment(), getString(R.string.me));
         adpter.notifyDataSetChanged();
         currentTabIndex = 0;
@@ -231,13 +231,13 @@ public class MainActivity extends BaseActivity implements DMTabHost.OnCheckedCha
         mLayoutTabhost.setOnCheckedChangeListener(this);
         mLayoutViewpage.setOnPageChangeListener(this);
         mTitlePopup = new TitlePopup(this, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        mTitlePopup.setItemOnClickListener(mOnItemOnClickListener);
         mTitlePopup.addAction(new ActionItem(this, R.string.menu_groupchat, R.drawable.icon_menu_group));
         mTitlePopup.addAction(new ActionItem(this, R.string.menu_addfriend, R.drawable.icon_menu_addfriend));
         mTitlePopup.addAction(new ActionItem(this, R.string.menu_qrcode, R.drawable.icon_menu_sao));
         mTitlePopup.addAction(new ActionItem(this, R.string.menu_money, R.drawable.icon_menu_money));
-        mTitlePopup.setItemOnClickListener(mOnItemOnClickLister);
     }
-    TitlePopup.OnItemOnClickListener mOnItemOnClickLister = new TitlePopup.OnItemOnClickListener() {
+    TitlePopup.OnItemOnClickListener mOnItemOnClickListener = new TitlePopup.OnItemOnClickListener() {
         @Override
         public void onItemClick(ActionItem item, int position) {
             switch (position){

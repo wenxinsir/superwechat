@@ -81,7 +81,7 @@
             android:textSize="13sp"
             android:visibility="gone"/>
 
-        <TextViewn
+        <TextView
             android:id="@+id/user_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
