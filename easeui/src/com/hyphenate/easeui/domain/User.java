@@ -107,9 +107,16 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserAvatar [muserName=" + muserName + ", muserNick=" + muserNick + ", mavatarId=" + mavatarId
-				+ ", mavatarPath=" + mavatarPath + ", mavatarSuffix=" + mavatarSuffix + ", mavatarType=" + mavatarType
-				+ ", mavatarLastUpdateTime=" + mavatarLastUpdateTime + "]";
+		return "User{" +
+				"muserName='" + muserName + '\'' +
+				", muserNick='" + muserNick + '\'' +
+				", mavatarId=" + mavatarId +
+				", mavatarPath='" + mavatarPath + '\'' +
+				", mavatarSuffix='" + mavatarSuffix + '\'' +
+				", mavatarType=" + mavatarType +
+				", mavatarLastUpdateTime='" + mavatarLastUpdateTime + '\'' +
+				", initialLetter='" + initialLetter + '\'' +
+				'}';
 	}
 
 	public String getInitialLetter() {
