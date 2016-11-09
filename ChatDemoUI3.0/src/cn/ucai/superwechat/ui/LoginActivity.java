@@ -144,7 +144,7 @@ public class LoginActivity extends BaseActivity {
         }
 
         progressShow = true;
-        ProgressDialog pd = new ProgressDialog(LoginActivity.this);
+        pd = new ProgressDialog(LoginActivity.this);
         pd.setCanceledOnTouchOutside(false);
         pd.setOnCancelListener(new OnCancelListener() {
 
@@ -179,7 +179,6 @@ public class LoginActivity extends BaseActivity {
                 Log.d(TAG, "login: onSuccess");
 
                 loginAppServer();
-                loginSuccess();
             }
 
             @Override
@@ -214,6 +213,7 @@ public class LoginActivity extends BaseActivity {
                         if (result!=null && result.isRetMsg()){
                             User user = (User) result.getRetData();
                             if (user!=null) {
+
                                 SuperWeChatHelper.getInstance().saveAppContact(user);
                                 SuperWeChatHelper.getInstance().setCurrentUser(user);
                                 loginSuccess();
@@ -233,6 +233,13 @@ public class LoginActivity extends BaseActivity {
                 L.e(TAG,"onError = "+ error);
             }
         });
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (pd!=null) {
+            pd.dismiss();
+        }
     }
 
     private void loginSuccess() {
@@ -284,14 +291,6 @@ public class LoginActivity extends BaseActivity {
             case R.id.btn_register:
                 MFGT.gotoRegister(this);
                 break;
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (pd!=null) {
-            pd.dismiss();
         }
     }
 }
