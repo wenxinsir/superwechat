@@ -135,6 +135,7 @@ public class NewGroupActivity extends BaseActivity {
                         }
                         EMGroup emGroup = EMClient.getInstance().groupManager().createGroup(groupName, desc, members, reason, option);
                         emGroup.getGroupId();
+
                         runOnUiThread(new Runnable() {
                             public void run() {
                                 progressDialog.dismiss();
