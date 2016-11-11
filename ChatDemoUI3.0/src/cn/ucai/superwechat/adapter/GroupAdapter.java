@@ -116,7 +116,7 @@ public class GroupAdapter extends ArrayAdapter<EMGroup> {
 			}
 			((TextView) convertView.findViewById(R.id.name)).setText(getItem(position - 3).getGroupName());
 
-			EaseUserUtils.setAppGroupAvatar(mContet,getItem(position - 3).getGroupId(),
+			EaseUserUtils.setAppGroupAvatar(mContext,getItem(position - 3).getGroupId(),
 					(ImageView) convertView.findViewById(R.id.avatar));
 
 		}
