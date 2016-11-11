@@ -61,6 +61,7 @@ public class GroupsActivity extends BaseActivity {
     public static GroupsActivity instance;
     private View progressBar;
 
+
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             mSwipeLayout.setRefreshing(false);
@@ -121,11 +122,9 @@ public class GroupsActivity extends BaseActivity {
                 if (position == 1) {
                     // create a new group
                     MFGT.gotoCreateNewGroup(GroupsActivity.this);
-                    startActivityForResult(new Intent(GroupsActivity.this, NewGroupActivity.class), 0);
                 } else if (position == 2) {
                     // join a public group
                     MFGT.gotoPublicGroup(GroupsActivity.this);
-                    startActivityForResult(new Intent(GroupsActivity.this, PublicGroupsActivity.class), 0);
                 } else {
                     // enter group chat
                     Intent intent = new Intent(GroupsActivity.this, ChatActivity.class);

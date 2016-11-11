@@ -196,7 +196,7 @@ public class ContactListFragment extends EaseContactListFragment {
             case R.id.group_item:
                 // 进入群聊列表页面
                 MFGT.gotoGroup(getActivity());
-                startActivity(new Intent(getActivity(), GroupsActivity.class));
+                //startActivity(new Intent(getActivity(), GroupsActivity.class));
                 break;
 
             default:
